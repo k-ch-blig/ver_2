@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion | Rolex Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #0d0f12;
+            --card-bg: #16191e;
+            --accent-gold: #c5a059;
+            --accent-gold-hover: #e0b86c;
+            --text-light: #f4f4f5;
+            --text-muted: #a1a1aa;
+            --border-color: #27272a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            transition: border-color 0.3s;
+        }
+
+        .login-card:hover {
+            border-color: var(--accent-gold);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-header h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .login-header p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            background: #0d0f12;
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: var(--accent-gold);
+        }
+
+        .btn-submit {
+            background: var(--accent-gold);
+            color: var(--primary-bg);
+            border: none;
+            width: 100%;
+            padding: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background: var(--accent-gold-hover);
+        }
+
+        .footer-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .footer-link a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        .footer-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <div class="login-header">
+            <h2>Espace Client</h2>
+            <p>Connectez-vous à votre compte</p>
+        </div>
+
+        <!-- ربط الفورم بملف الـ PHP عبر خاصية action و method -->
+        <form action="login.php" method="POST">
+            <div class="form-group">
+                <label for="phone">Numéro de Téléphone</label>
+                <input type="tel" id="phone" name="phone" placeholder="Ex: 20123456" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mot de Passe</label>
+                <input type="password" id="password" name="password" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Se Connecter</button>
+        </form>
+
+        <div class="footer-link">
+            <p>Vous n'avez pas de compte ? <a href="#">S'inscrire</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
